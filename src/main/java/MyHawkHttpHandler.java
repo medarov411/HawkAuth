@@ -18,7 +18,7 @@ public class MyHawkHttpHandler implements HttpHandler {
         String path = httpRequestToBeSent.path();
         String bodyreq = httpRequestToBeSent.bodyToString();
         // Создание контекста Hawk
-        HawkContext hawkContext = HawkContext.request(method, path, "v2.staging.ecapz.com", 443)
+        HawkContext hawkContext = HawkContext.request(method, path, "YOUR-HOST", 443)
                 .credentials(id, secret, Algorithm.SHA_256)
                 .body(bodyreq.getBytes(Charsets.UTF_8), "application/json")
                 .build();
